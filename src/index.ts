@@ -33,7 +33,18 @@ function calculateTax(income: number, taxYear = 2022): number {
 console.log(calculateTax(10_000, 2023));
 
 // Objects
-let employee: {
-    id: number, name?: string
-} = {id : 1};
-employee.name = 'Ayush';
+type Employee = {
+    readonly id: number,
+    name?: string,
+    retire: (date: Date) => void
+}
+
+let employee: Employee = {
+    id : 1,
+    name: 'Ayush',
+    retire: (date: Date) => {
+        console.log(date);
+    }
+}
+
+// Union Types 
