@@ -20,4 +20,20 @@ numbers.forEach(n => n.toExponential);
 let user: [number, string] = [1, 'Ayush'];
 
 // Enums
-enum Size {Small, Medium, Large};
+const enum Size {Small = 1, Medium, Large}; 
+let mySize: Size = Size.Medium;
+console.log(mySize);
+
+// Functions
+function calculateTax(income: number, taxYear = 2022): number {
+    if(taxYear < 2022)
+        return income * 1.2;
+    return income * 1.3;
+}
+console.log(calculateTax(10_000, 2023));
+
+// Objects
+let employee: {
+    id: number, name?: string
+} = {id : 1};
+employee.name = 'Ayush';
